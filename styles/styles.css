@@ -1,11 +1,17 @@
 @import "fonts.css";
 
 :root {
-    --primary-black: #3C4245;
-    --secondary-black: #5F6769;
+
+    --primary-dark: #3C4245;
+    --secondary-dark: #5F6769;
     --primary-blue: #3C5E75;
     --secondary-blue: #507491;
     --text-color: #F6F6F6;
+
+    --header-height: 10%;
+
+    --logo-size: 65px;
+    --options-size: 24px;
 }
 
 * {
@@ -13,3 +19,78 @@
     padding: 0;
 }
 
+html {
+    height: 100%;
+}
+
+body {
+    background-color: var(--primary-dark);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.content {
+    flex: 1;
+}
+
+.header {
+    height: var(--header-height);
+    display: flex;
+    align-items: baseline;
+}
+
+.header > .logo {
+    flex: 1;
+    cursor: pointer;
+}
+
+.header > .options {
+    flex: 2;
+}
+
+.header > .logo > * {
+    font-family: "Montserrat Bold";
+    font-size: var(--logo-size);
+}
+
+.header > .logo > .trans {
+    color: var(--primary-blue);
+}
+
+.header > .logo > .nfc {
+    color: var(--secondary-blue);
+}
+
+.header > .options > span.option {
+    padding-left: 80px;
+}
+
+.header > .options > span.option > a {
+    font-family: "RobotoMono Regular";
+    font-size: var(--options-size);
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+a::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0;
+    transition: ease-in-out width 300ms;
+    background-color: var(--text-color);
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+.footer {
+    background-color: var(--secondary-dark);
+    min-height: 25%;
+}
