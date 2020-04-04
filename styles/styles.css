@@ -8,10 +8,15 @@
     --secondary-blue: #507491;
     --text-color: #F6F6F6;
 
-    --header-height: 10%;
+    --header-height: 17%;
+
+    --underline-height: 2px;
 
     --logo-size: 65px;
     --options-size: 24px;
+
+    --right-padding: 5%;
+    --left-padding: 4%;
 }
 
 * {
@@ -36,12 +41,14 @@ body::-webkit-scrollbar {
 
 .content {
     flex: 1;
+    padding-left: var(--right-padding);
+    padding-right: var(--left-padding);
 }
 
 .header {
     height: var(--header-height);
     display: flex;
-    align-items: baseline;
+    align-items: center;
 }
 
 .header > .logo {
@@ -50,7 +57,7 @@ body::-webkit-scrollbar {
 }
 
 .header > .options {
-    flex: 2;
+    flex: 1;
 }
 
 .header > .logo > * {
@@ -66,8 +73,10 @@ body::-webkit-scrollbar {
     color: var(--secondary-blue);
 }
 
-.header > .options > span.option {
-    padding-left: 80px;
+.header > .options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .header > .options > span.option > a {
@@ -77,16 +86,16 @@ body::-webkit-scrollbar {
     text-decoration: none;
 }
 
-a::after {
+.header > .options > span.option > a::after {
     content: "";
     display: block;
-    height: 3px;
     width: 0;
-    transition: ease-in-out width 300ms;
+    height: var(--underline-height);
     background-color: var(--text-color);
+    transition: ease-in-out width 300ms;
 }
 
-a:hover::after {
+.header > .options > span.option > a:hover::after {
     width: 100%;
 }
 
