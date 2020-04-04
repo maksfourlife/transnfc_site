@@ -2,6 +2,8 @@
 
 :root {
 
+    --primary-dark-transparent: #3C424500;
+
     --primary-dark: #3C4245;
     --secondary-dark: #5F6769;
     --primary-blue: #3C5E75;
@@ -14,6 +16,9 @@
 
     --logo-size: 65px;
     --options-size: 24px;
+    --block-h1-size: 48px;
+    --block-h2-size: 30px;
+    --block-3-size: 26px;
 
     --right-padding: 5%;
     --left-padding: 4%;
@@ -97,6 +102,63 @@ body::-webkit-scrollbar {
 
 .header > .options > span.option > a:hover::after {
     width: 100%;
+}
+
+.header ~ .block {
+    margin-top: 100px;
+}
+
+.content > .block {
+    display: flex;
+    align-items: center;
+}
+
+.content > .block > .text {
+    flex: 2;
+}
+
+.content > .block > .text h1, h2, h3 {
+    color: var(--text-color);
+}
+
+.content > .block > .text h1 {
+    font-family: "Montserrat SemiBold";
+    font-size: var(--block-h1-size);
+    margin-bottom: 50px;
+}
+
+.content > .block > .text h1 ~ h2, h3 {
+    margin-top: 70px;
+}
+
+.content > .block > .text h2, h3 {
+    font-family: "RobotoMono Bold";
+}
+
+.content > .block > .text h2 {
+    font-size: var(--block-h2-size);
+    margin-bottom: 30px;
+}
+
+.content > .block > .text h2 ~ h3 {
+    margin-top: 100px;
+}
+
+.content > .block > .text h3 {
+    font-size: var(--block-3-size);
+}
+
+.content > .block .mark {
+    color: var(--secondary-blue);
+}
+
+.content > .block > .img {
+    flex: 1;
+}
+
+.content > .block > .img > img {
+    width: 100%;
+    height: auto;
 }
 
 .footer {
