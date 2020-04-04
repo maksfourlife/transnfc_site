@@ -2,15 +2,21 @@
 
 :root {
     --primary-black: #3C4245;
+    --primary-black-transp: #3C424500;
     --secondary-black: #5F6769;
     --primary-blue: #3C5E75;
     --secondary-blue: #507491;
     --text-color: #F6F6F6;
     --logo-text: 56px;
+    --logo-small-text: 27px;
     --options-text: 24px;
+    --options-margintop: 2%;
+    --logo-margintop: 1%;
     --size-space: 5%;
     --header-height: 20%;
     --footer-height: 25%;
+    --underline-height: 2px;
+    --underline-time: 250ms;
 }
 
 * {
@@ -22,11 +28,16 @@ html {
     height: 100%;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     background-color: var(--primary-black);
     display: flex;
     flex-direction: column;
     height: 100%;
+    overflow-x: hidden;
 }
 
 .content {
@@ -37,8 +48,13 @@ body {
 }
 
 .header {
+    background-color: var(--primary-black);
     height: var(--header-height);
     display: flex;
+}
+
+.logo {
+    margin-top: var(--logo-margintop);
 }
 
 .logo > * {
@@ -51,17 +67,18 @@ body {
 }
 
 .logo .nfc {
+    margin-left: -3px;
     color: var(--secondary-blue);
 }
 
 .logo, .options {
-    align-self: center;
     flex: 1;
 }
 
 .options {
     display: flex;
     justify-content: space-evenly;
+    margin-top: var(--options-margintop);
 }
 
 .options > .option {
@@ -69,7 +86,6 @@ body {
     font-size: var(--options-text);
     color: var(--text-color);
     text-align: end;
-    /* flex: 1; */
 }
 
 .option {
@@ -80,13 +96,33 @@ body {
     content: "";
     display: block;
     width: 0px;
-    height: 3px;
+    height: var(--underline-height);
     background-color: var(--text-color);
-    transition: ease-in-out width 300ms;
+    transition: ease-in-out width var(--underline-time);
 }
 
 .under:hover::after {
     width: 100%;
+}
+
+.header::after {
+    content: "";
+    width: 100%;
+    margin-left: -100%;
+    margin-top: 5%;
+    height: 100px;
+    background: linear-gradient(0deg, var(--primary-black-transp), var(--primary-black));
+}
+
+.handphone .logo > * {
+    font-size: var(--logo-small-text);
+    position: relative;
+    top: 190px;
+    left: 225px;
+}
+
+.handphone img {
+    max-width: 25%;
 }
 
 .footer {
