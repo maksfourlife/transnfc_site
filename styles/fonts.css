@@ -9,6 +9,11 @@
 }
 
 @font-face {
+    src: url(../assets/RobotoMono-Bold.ttf);
+    font-family: "RobotoMono Bold";
+}
+
+@font-face {
     src: url(../assets/Montserrat-Bold.ttf);
     font-family: "Montserrat Bold";
 }

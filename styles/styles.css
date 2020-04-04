@@ -17,6 +17,9 @@
     --footer-height: 25%;
     --underline-height: 2px;
     --underline-time: 250ms;
+    --block-h1-text: 48px;
+    --block-h2-text: 30px;
+    --block-h3-text: 26px;
 }
 
 * {
@@ -114,15 +117,43 @@ body {
     background: linear-gradient(0deg, var(--primary-black-transp), var(--primary-black));
 }
 
-.handphone .logo > * {
-    font-size: var(--logo-small-text);
-    position: relative;
-    top: 190px;
-    left: 225px;
+.block {
+    display: flex;
 }
 
-.handphone img {
-    max-width: 25%;
+.block .text {
+    flex: 2;
+}
+
+.block .img {
+    flex: 1;
+}
+
+.block h1 {
+    font-size: var(--block-h1-text);
+    color: var(--text-color);
+    font-family: "Montserrat SemiBold";
+}
+
+.block h2, h3 {
+    font-family: "RobotoMono Bold";
+    color: var(--text-color);
+}
+
+.block h2 {
+    font-size: var(--block-h2-text);
+}
+
+.block h3 {
+    font-size: var(--block-h3-text);
+}
+
+.block .img img {
+    max-width: 70%;
+}
+
+.marked {
+    color: var(--secondary-blue);
 }
 
 .footer {
