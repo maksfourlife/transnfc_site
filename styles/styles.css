@@ -1,7 +1,16 @@
+@import "fonts.css";
+
 :root {
-    --primary-color: #3C4245;
-    --secondary-color: #5F6769;
-    --text-color: #f6f6f6;
+    --primary-black: #3C4245;
+    --secondary-black: #5F6769;
+    --primary-blue: #3C5E75;
+    --secondary-blue: #507491;
+    --text-color: #F6F6F6;
+    --logo-text: 56px;
+    --options-text: 24px;
+    --size-space: 5%;
+    --header-height: 20%;
+    --footer-height: 25%;
 }
 
 * {
@@ -14,17 +23,73 @@ html {
 }
 
 body {
-    background-color: var(--primary-color);
+    background-color: var(--primary-black);
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    height: 100%;
 }
 
 .content {
     flex: 1;
+    height: 100%;
+    padding-left: var(--size-space);
+    padding-right: var(--size-space);
+}
+
+.header {
+    height: var(--header-height);
+    display: flex;
+}
+
+.logo > * {
+    font-family: "Montserrat Bold";
+    font-size: var(--logo-text);
+}
+
+.logo .trans {
+    color: var(--primary-blue);
+}
+
+.logo .nfc {
+    color: var(--secondary-blue);
+}
+
+.logo, .options {
+    align-self: center;
+    flex: 1;
+}
+
+.options {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.options > .option {
+    font-family: "RobotoMono Regular";
+    font-size: var(--options-text);
+    color: var(--text-color);
+    text-align: end;
+    /* flex: 1; */
+}
+
+.option {
+    cursor: pointer;
+}
+
+.under::after {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 3px;
+    background-color: var(--text-color);
+    transition: ease-in-out width 300ms;
+}
+
+.under:hover::after {
+    width: 100%;
 }
 
 .footer {
-    min-height: 25vh;
-    background-color: var(--secondary-color);
+    min-height: var(--footer-height);
+    background-color: var(--secondary-black);
 }
