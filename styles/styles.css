@@ -1,0 +1,30 @@
+:root {
+    --primary-color: #3C4245;
+    --secondary-color: #5F6769;
+    --text-color: #f6f6f6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.content {
+    flex: 1;
+}
+
+.footer {
+    min-height: 25vh;
+    background-color: var(--secondary-color);
+}
